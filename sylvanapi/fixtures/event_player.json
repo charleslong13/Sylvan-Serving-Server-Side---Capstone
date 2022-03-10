@@ -1,10 +1,10 @@
 [
     {
         "model": "sylvanapi.EventPlayer",
-        "pk": "1",
+        "pk": 1,
         "fields": {
-            "player": "1",
-            "event": "1"
+            "player": 1,
+            "event": 1
         }
     }
 ]

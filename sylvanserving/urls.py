@@ -4,8 +4,11 @@ from django.urls import path
 from sylvanapi.views.auth import register_user, login_user
 from rest_framework import routers
 
+from sylvanapi.views.deck import DeckViewSet
+
 
 router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'decks', DeckViewSet, 'deck')
 
 urlpatterns = [
     path('', include(router.urls)),
@@ -13,6 +16,7 @@ urlpatterns = [
     path('login', login_user),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
+   
     
     
 ]
