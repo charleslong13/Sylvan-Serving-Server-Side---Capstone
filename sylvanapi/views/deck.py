@@ -16,7 +16,7 @@ class DeckViewSet(ViewSet):
         """
         
         player = Player.objects.get(user=request.auth.user)
-        play_style = PlayStyle.objects.get(pk=request.data["playStyleId"])
+        play_style = PlayStyle.objects.get(pk=request.data["playStyle"]["id"])
        
         # Create a new Python instance of the Deck class
         # and set its properties from what was sent in the
@@ -32,10 +32,10 @@ class DeckViewSet(ViewSet):
             lands = request.data["lands"],
             wins = request.data["wins"],
             losses = request.data["losses"],
-            power_level = request.data["powerLevel"],
+            powerLevel = request.data["powerLevel"],
             primer = request.data["primer"],
             player = player,
-            play_style = play_style
+            playStyle = play_style
         )
         
         try:
@@ -58,8 +58,7 @@ class DeckViewSet(ViewSet):
         if play_style is not None:
             decks = decks.filter(play_style__id=play_style)
         
-        serializer = DeckSerializer(
-            decks, many=True, context={'request': request})
+        serializer = DeckSerializer(decks, many=True, context={'request': request})
         return Response(serializer.data)
     
     def retrieve(self, request, pk):
@@ -88,31 +87,34 @@ class DeckViewSet(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
-        player = Player.objects.get(user=request.auth.user)
+        try:
+            player = Player.objects.get(user=request.auth.user)
 
-        # Do mostly the same thing as POST, but instead of
-        # creating a new instance of Game, get the game record
-        # from the database whose primary key is `pk`
-        deck = Deck.objects.get(pk=pk)
-        deck.title = request.data["title"]
-        deck.commander = request.data["commander"]
-        deck.artifacts = request.data["artifacts"]
-        deck.enchantments = request.data["enchantments"]
-        deck.instants = request.data["instants"]
-        deck.sorceries = request.data["sorceries"]
-        deck.lands = request.data["lands"]
-        deck.wins = request.data["wins"]
-        deck.losses = request.data["losses"]
-        deck.power_level = request.data["powerLevel"]
-        deck.primer = request.data["primer"]
-        deck.player = player
+            # Do mostly the same thing as POST, but instead of
+            # creating a new instance of Game, get the game record
+            # from the database whose primary key is `pk`
+            deck = Deck.objects.get(pk=pk)
+            deck.title = request.data["title"]
+            deck.commander = request.data["commander"]
+            deck.artifacts = request.data["artifacts"]
+            deck.enchantments = request.data["enchantments"]
+            deck.instants = request.data["instants"]
+            deck.sorceries = request.data["sorceries"]
+            deck.lands = request.data["lands"]
+            deck.wins = request.data["wins"]
+            deck.losses = request.data["losses"]
+            deck.power_level = request.data["powerLevel"]
+            deck.primer = request.data["primer"]
+            deck.player = player
 
-        play_style = PlayStyle.objects.get(pk=request.data["playStyle"])
-        deck.play_style = play_style
-        deck.save()
-
+            play_style = PlayStyle.objects.get(pk=request.data["playStyle"]["id"])
+            deck.play_style = play_style
+            deck.save()
+        except Exception as ex:
+            return HttpResponseServerError(ex)
         # 204 status code means everything worked but the
         # server is not sending back any data in the response
+        
         return Response(None, status=status.HTTP_204_NO_CONTENT)
         
     def destroy(self, request, pk):
@@ -130,6 +132,6 @@ class DeckViewSet(ViewSet):
 class DeckSerializer(serializers.ModelSerializer):
     """JSON serializer for decks"""
     class Meta:
-        model: Deck
+        model = Deck
         fields = "__all__"
         depth = 2
