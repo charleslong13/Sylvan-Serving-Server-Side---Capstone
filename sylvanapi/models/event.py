@@ -10,7 +10,7 @@ class Event(models.Model):
     address = models.CharField(max_length=200)
     description = models.CharField(max_length=400)
     organizer = models.ForeignKey("Player", on_delete=models.CASCADE, related_name='organizing')
-    attendees = models.ManyToManyField("Player", through="Attendees", related_name="attending")
+    attendees = models.ManyToManyField("Player", through="EventPlayer", related_name="attending")
     @property
     def joined(self):
         return self.__joined

@@ -1,6 +1,6 @@
 [
     {
-        "model": "sylvanapi.play_style",
+        "model": "sylvanapi.PlayStyle",
         "pk": "1",
         "fields": {
             "label": "aggro"
