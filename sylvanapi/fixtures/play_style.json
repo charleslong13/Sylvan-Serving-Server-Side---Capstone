@@ -1,0 +1,30 @@
+[
+    {
+        "model": "sylvanapi.PlayStyle",
+        "pk": "1",
+        "fields": {
+            "label": "aggro"
+        }
+    },
+    {
+        "model": "sylvanapi.PlayStyle",
+        "pk": "2",
+        "fields": {
+            "label": "Midrange"
+        }
+    },
+        {
+            "model": "sylvanapi.PlayStyle",
+            "pk": "3",
+            "fields": {
+                "label": "Control"
+            }
+        },
+        {
+            "model": "sylvanapi.PlayStyle",
+            "pk": "4",
+            "fields": {
+                "label": "Combo"
+            }
+        }
+]

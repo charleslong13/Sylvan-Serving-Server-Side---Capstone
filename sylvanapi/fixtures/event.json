@@ -1,0 +1,16 @@
+[
+    {
+        "model": "sylvanapi.event",
+        "pk": "1",
+        "fields": {
+            "name": "Commander Event Night",
+            "date": "2022-03-26",
+            "time": "06:00",
+            "venue": "The Game Zone",
+            "address": "1200 Real Street Drive",
+            "description": "Come play Commander in a casual setting. Free prizes to winners!",
+            "organizer": "1",
+            "attendees": "1"
+        }
+    }
+]

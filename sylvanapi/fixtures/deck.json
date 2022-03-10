@@ -1,0 +1,23 @@
+[
+    {
+        "model": "sylvanapi.deck",
+        "pk": 1,
+        "fields": {
+            "player": 1,
+            "playStyle": 1,
+            "title": "Markov Family Reunion",
+            "commander": "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=433277&type=card",
+            "creatures": "Blood Artist, Tithe Drinker, BloodHusk Ritualist, Captivating Vampire, Dark Imposter, Kheru Mind-Eater, Mathas Fiend Seeker, Pawn of Ulamog, Rakish Heir, Stromkirk Captain, Vampire NightHawk, Bloodsworn Steward, Falkenrath Noble, Sangromancer, Anowon the Ruin Sage, Blood Baron of Vizkopa, Bloodline Necromancer, Bloodlord of Vaasgoth, Crimson Honor Guard, Drana Kalastria Bloodchief, Malakir Bloodwitch, Patron of the Vein, Skeletal Vampire, Vein Drinker, Butcher of Malakir, Licia Sanguine Tribune",
+            "artifacts": "Blade of the Bloodchief, Skullclamp, Sol Ring, Boros Signet, Orzhov signet, Rakdos Signet, Heirloom Blade, Worn Powerstone, Door of Destinies, Well of Lost Dreams",
+            "enchantments": "Blind Obedience, Curse of Disturbance, Curse of Vitality, Underworld Connections, Kindred Boon, Outpost Siege, Black Market, Sanguine Bond",
+            "instants": "Skeletal Scrying, Swords to Plowshares, Go for the Throat, Crackling Doom, Mortify, Teferi's Protection, Return to Dust",
+            "sorceries": "Damnable Pact, Read the Bones, Ambition's Cost, Consuming Vapors, Disrupt Decorum, New Blood, Syphon Mind, Fell the Mighty, Blood Tribute, Kindred Charge, Merciless Eviction",
+            "lands": "1x Akoum Refuge, 1x Bloodfell Caves, 1x Bojuka Bog, 1x Boros Garrison, 1x Boros Guildgate, 1x Cinder Barrens, 1x Command Tower, 1x Evolving Wilds, 1x Forsaken Sanctuary, Kabira Crossroads, 4x mountain, 1x Nomad Outpost, 1x Opal Palace, 1x Orzhov Basilica, 1x Orzhov Guildgate, 1x Path of Ancestry, 3x Plains, 1x Rakdos Carnarium, 1x Rakdos Guildgate, 1x Scoured Barrens, 1x Stone Quarry, 8x Swamp, 1x Terramorphic Expanse, 1x Urborg Volcano, 1x Wind-Scarred Crag",
+            "wins": 12,
+            "losses": 15,
+            "powerLevel": 7,
+            "primer": "With Edgar Markov having an eminence ability (which means triggers whether you play him from the command zone or not) the gameplan is to play lots of creatures which gains you additional tokens. Once you have lots of creatures out you pump them all up and swing in for the win!"
+
+        }
+    }
+]
