@@ -1,3 +1,3 @@
 # Sylvan-Serving-Server-Side---Capstone
 
-Created with React 
+Created with Django
