@@ -1,0 +1,11 @@
+[
+    {
+        "model": "sylvanapi.comments",
+        "pk": "1",
+        "fields": {
+            "player": "1",
+            "deck": "1",
+            "comments": "I really like this deck! You might want to consider adding an Esper Sentinel for more card draw!"
+        }
+    }
+]

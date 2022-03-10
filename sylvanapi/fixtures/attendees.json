@@ -1,0 +1,10 @@
+[
+    {
+        "model": "sylvanapi.attendees",
+        "pk": "1",
+        "fields": {
+            "player": "1",
+            "event": "1"
+        }
+    }
+]
