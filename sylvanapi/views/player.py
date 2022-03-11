@@ -6,7 +6,7 @@ from sylvanapi.models import Player
 
 
 class PlayerView(ViewSet):
-    """SHOTGUN APP USERS VIEW"""
+    """ Players VIEW"""
 
     def retrieve(self, request, pk):
         """Handle GET requests for single player
@@ -29,7 +29,7 @@ class PlayerView(ViewSet):
         return Response(serializer.data)
     
 class PlayerSerializer(serializers.ModelSerializer):
-    """JSON serializer for app users
+    """JSON serializer for players
     """
     class Meta:
         model = Player
