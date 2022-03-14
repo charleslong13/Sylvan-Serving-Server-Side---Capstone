@@ -16,7 +16,7 @@ class DeckViewSet(ViewSet):
         """
         
         player = Player.objects.get(user=request.auth.user)
-        play_style = PlayStyle.objects.get(pk=request.data["playStyle"]["id"])
+        play_style = PlayStyle.objects.get(pk=request.data["playStyle"])
        
         # Create a new Python instance of the Deck class
         # and set its properties from what was sent in the
