@@ -103,11 +103,11 @@ class DeckViewSet(ViewSet):
             deck.lands = request.data["lands"]
             deck.wins = request.data["wins"]
             deck.losses = request.data["losses"]
-            deck.power_level = request.data["powerLevel"]
+            deck.powerLevel = request.data["powerLevel"]
             deck.primer = request.data["primer"]
             deck.player = player
                                 #
-            play_style = PlayStyle.objects.get(pk=request.data["playStyle"]["id"])
+            play_style = PlayStyle.objects.get(pk=request.data["playStyle"])
             deck.play_style = play_style
             deck.save()
         except Exception as ex:

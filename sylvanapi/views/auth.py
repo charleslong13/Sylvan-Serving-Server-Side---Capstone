@@ -4,7 +4,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework import serializers, status
+from rest_framework import status
 from sylvanapi.models import Player
 
 @api_view(['POST'])
@@ -25,7 +25,7 @@ def login_user(request):
     # If authentication was successful, respond with their token
     if authenticated_user is not None:
         token = Token.objects.get(user=authenticated_user)
-        player = Player.objects.get(pk=authenticated_user.id)
+        player = Player.objects.get(user_id=authenticated_user.id)
         data = {
             'valid': True,
             'token': token.key,
