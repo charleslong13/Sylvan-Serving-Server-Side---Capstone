@@ -57,7 +57,9 @@ class DeckViewSet(ViewSet):
         play_style = self.request.query_params.get('type', None)
         if play_style is not None:
             decks = decks.filter(play_style__id=play_style)
-        
+        playerId = self.request.query_params.get('playerId', None)
+        if playerId is not None:
+            decks = decks.filter(player_id = playerId)
         serializer = DeckSerializer(decks, many=True, context={'request': request})
         return Response(serializer.data)
     
