@@ -46,3 +46,4 @@ class PlayStyleSerializer(serializers.ModelSerializer):
     class Meta:
         model = PlayStyle
         fields = "__all__"
+        depth = 1
