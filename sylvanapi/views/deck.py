@@ -54,9 +54,9 @@ class DeckViewSet(ViewSet):
         """
         #get all deck records from the database
         decks = Deck.objects.all()
-        play_style = self.request.query_params.get('type', None)
+        play_style = self.request.query_params.get('playStyle', None)
         if play_style is not None:
-            decks = decks.filter(play_style__id=play_style)
+            decks = decks.filter(playStyle=play_style)
         playerId = self.request.query_params.get('playerId', None)
         if playerId is not None:
             decks = decks.filter(player_id = playerId)
