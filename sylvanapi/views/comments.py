@@ -31,6 +31,9 @@ class CommentView(ViewSet):
             Response -- JSON serialized list of app players
         """
         comments = Comments.objects.all()
+        deckId = self.request.query_params.get('deckId', None)
+        if deckId is not None:
+            comments = comments.filter(deck_id = deckId)
         serializer = CommentSerializer(comments, many=True, context={'request': request})
         return Response(serializer.data)
     
@@ -42,7 +45,7 @@ class CommentView(ViewSet):
         """
         player = Player.objects.get(user=request.auth.user.id)
         comment = Comments.objects.create(
-            comments = request.data["comments"],
+            comments = request.data["comment"],
             deck_id = request.data["deck_id"],
             player=player
         )
